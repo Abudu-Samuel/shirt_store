@@ -1,0 +1,388 @@
+body {
+  font-family: "Montserrat", sans-serif !important;
+  background: #efefef !important;
+  color: #000000 !important;
+}
+
+.btn-circle {
+  width: 20px;
+  height: 20px;
+  padding: 3px 0px;
+  border-radius: 10px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.234;
+}
+
+@media (max-width: 575.98px) {
+  .text {
+    text-align: center;
+  }
+
+  .react-3d-carousel .slider-container .slider-left div {
+    top: 67% !important;
+  }
+
+  .react-3d-carousel .slider-container .slider-right div {
+    top: 67% !important;
+  }
+
+  .react-3d-carousel {
+    height: 140px !important;
+  }
+
+  .front-card {
+    height: 43px !important;
+  }
+
+  .text-size {
+    font-size: 19px;
+    margin-top: -13px;
+  }
+
+  .item-cart {
+    font-size: 1.4rem;
+  }
+
+  .btn-merge {
+    z-index: 1;
+    position: absolute;
+    bottom: 1rem;
+    left: 4.8rem;
+  }
+
+  .btn-merge-two {
+    z-index: 1;
+    position: absolute;
+    bottom: 1rem;
+    left: 4.8rem;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .text {
+    margin-left: 85px;
+  }
+
+  .nav-space {
+    margin-left: 1.65rem;
+  }
+
+  .react-3d-carousel {
+    height: 267px !important;
+  }
+
+  .front-card {
+    height: 50px !important;
+  }
+
+  .text-size {
+    font-size: 20px;
+    margin-top: -10px;
+  }
+
+  .btn-merge {
+    z-index: 1;
+    position: absolute;
+    bottom: 1.6rem;
+    left: 4.8rem;
+  }
+
+  .btn-merge-two {
+    z-index: 1;
+    position: absolute;
+    bottom: 1.2rem;
+    left: 4.8rem;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .text {
+    margin-left: 90px;
+  }
+
+  .nav-space {
+    margin-left: 4.3rem;
+  }
+
+  .search-space {
+    margin-right: 5.4rem;
+  }
+
+  .react-3d-carousel {
+    height: 360px !important;
+  }
+
+  .front-card {
+    height: 50px !important;
+  }
+
+  .text-size {
+    font-size: 20px;
+    margin-top: -8px;
+  }
+
+  nav {
+    height: 50px;
+  }
+
+  .form-control {
+    height: 27px;
+    width: 120px;
+  }
+
+  .search-btn {
+    margin-top: 2px;
+  }
+
+  .cart-table {
+    display: flex;
+  }
+
+  .btn-merge {
+    z-index: 1;
+    position: absolute;
+    bottom: 1.6rem;
+    left: 4.8rem;
+  }
+
+  .btn-merge-two {
+    z-index: 1;
+    position: absolute;
+    bottom: 1.2rem;
+    left: 4.8rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .text {
+    margin-left: 90px;
+  }
+
+  .tester {
+    margin-left: 40px;
+  }
+
+  .nav-space {
+    margin-left: 8.6rem;
+  }
+
+  .search-space {
+    margin-right: 13.8rem;
+  }
+
+  .item-space {
+    margin-left: 16rem !important;
+  }
+
+  .react-3d-carousel {
+    height: 490px !important;
+  }
+
+  .front-card {
+    height: 50px !important;
+  }
+
+  .text-size {
+    font-size: 20px;
+    margin-top: -8px;
+  }
+
+  nav {
+    height: 50px;
+  }
+
+  .form-control {
+    height: 27px;
+    width: 120px;
+  }
+
+  .search-btn {
+    margin-top: 2px;
+  }
+
+  .cart-table {
+    display: flex;
+  }
+
+  .btn-merge {
+    z-index: 1;
+    position: absolute;
+    bottom: 1.6rem;
+    left: 4.8rem;
+  }
+
+  .btn-merge-two {
+    z-index: 1;
+    position: absolute;
+    bottom: 1.2rem;
+    left: 4.8rem;
+  }
+}
+
+@media (min-width: 2000px) {
+  .cart-table {
+    display: flex;
+  }
+
+  .nav-space {
+    margin-left: 20.1rem;
+  }
+
+  .search-space {
+    margin-right: 37.2rem;
+  }
+
+  .item-space {
+    margin-left: 41rem !important;
+  }
+
+  .slide-img {
+    width: 3400px;
+  }
+}
+
+.form-control {
+  border-radius: 1.25rem;
+}
+
+.img-merge {
+  position: absolute;
+  left: 4.2rem;
+}
+
+.move {
+  margin-right: 200px !important;
+}
+
+.nav-color {
+  background: #ffffff !important;
+}
+
+.navbar.navbar-light .navbar-toggler-icon {
+  background-image: url("./assets/images/icons/bag/burger_icon.png");
+  font-size: 12px;
+}
+
+.card {
+  box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.26), 0 5px 13px 0 rgba(0, 0, 0, 0.19) !important;
+}
+
+.btn-dep {
+  background: #ffffff !important;
+}
+
+.btn-dep:hover {
+  background: #ffffff !important;
+}
+
+.product-card:hover {
+  transform: scale(1.1);
+  transition: all 0.8s linear;
+  cursor: pointer;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+
+.loader {
+  display: flex;
+  justify-content: center;
+  margin-top: 25px;
+}
+
+.input-form {
+  border: 1.4px solid #f7436b;
+}
+
+.search-btn {
+  color: #f7436b;
+}
+
+.search-btn:hover {
+  color: #f7436b;
+}
+
+.body {
+  background: #ffffff;
+}
+
+.img-dt {
+  height: 120px;
+  width: 93px;
+}
+
+.hov:hover {
+  border: 3px solid #efefef;
+}
+
+.modal-dialog.modal-notify.modal-info .modal-header {
+  background-color: rgb(247, 67, 107);
+}
+
+.modal-dialog.modal-notify.modal-info .fas {
+  color: rgb(247, 67, 107);
+}
+
+.btn-info {
+  background-color: rgb(247, 67, 107) !important;
+  color: #fff;
+}
+
+.btn-outline-info {
+  border: 2px solid rgb(247, 67, 107) !important;
+  background-color: transparent !important;
+  color: rgb(247, 67, 107) !important;
+}
+
+.btn-outline-info:hover {
+  border: 2px solid rgb(247, 67, 107) !important;
+  background-color: transparent !important;
+  color: rgb(247, 67, 107) !important;
+}
+
+.btn-sm {
+  outline: none !important;
+}
+
+.quantity {
+  padding-left: 75px !important;
+}
+
+.profile-button {
+  padding: 0.4rem 1rem !important;
+}
+
+.dropdown-item:hover {
+  background: rgb(247, 67, 107);
+  color: #fff !important;
+}
+
+.user-card {
+  max-width: 94%;
+  min-width: 94%;
+}
+
+.label {
+  transform: translateY(-141%) !important;
+  font-size: 0.8rem !important;
+}
+
+.custom-select {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  padding-left: 40px;
+  font-size: 0.9rem !important;
+}
+
+.error-input-field {
+  border-color: #f7436b !important;
+}
+
+.field-error {
+  color: #f7436b;
+}
