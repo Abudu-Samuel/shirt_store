@@ -1,5 +1,4 @@
 import React from "react";
-// import NotFoundImage from '../../assets/images/ezgif.com-resize.png'
 
 export default () => (
   <div className="container">
