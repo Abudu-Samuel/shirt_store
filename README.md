@@ -1,1 +1,1 @@
-Shirt stort
+Shirt store app
