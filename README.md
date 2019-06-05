@@ -1,3 +1,3 @@
 Shirt store app
 
-Awesome web app
+Awesome web app.
