@@ -154,19 +154,35 @@ class Cart extends Component {
                       shop
                     </button>
                   </Link>
-                  <Link to="/order">
-                    <button
-                      className="btn btn-sm"
-                      style={{
-                        borderRadius: 15,
-                        float: "right",
-                        background: "#f7436b",
-                        color: "#fff"
-                      }}
-                    >
-                      checkout
-                    </button>
-                  </Link>
+                  {Object.keys(this.props.userData).length > 0 ? (
+                    <Link to="/order">
+                      <button
+                        className="btn btn-sm"
+                        style={{
+                          borderRadius: 15,
+                          float: "right",
+                          background: "#f7436b",
+                          color: "#fff"
+                        }}
+                      >
+                        checkout
+                      </button>
+                    </Link>
+                  ) : (
+                    <Link to="/login">
+                      <button
+                        className="btn btn-sm"
+                        style={{
+                          borderRadius: 15,
+                          float: "right",
+                          background: "#f7436b",
+                          color: "#fff"
+                        }}
+                      >
+                        Login to proceed to checkout
+                      </button>
+                    </Link>
+                  )}
                 </div>
               </div>
             )}
@@ -178,11 +194,13 @@ class Cart extends Component {
 }
 
 const mapStateToProps = ({
-  products: { cart, isFetching, updateQuantity }
+  products: { cart, isFetching, updateQuantity },
+  users: { userData }
 }) => ({
   cart,
   isFetching,
-  updateQuantity
+  updateQuantity,
+  userData
 });
 
 const mapDispatchToProps = dispatch => ({

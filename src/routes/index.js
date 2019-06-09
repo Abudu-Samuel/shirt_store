@@ -1,5 +1,5 @@
 import React, { Fragment } from "react";
-import { BrowserRouter, Switch, Route, } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 import Navbar from "../components/common/Navbar";
 import Products from "../components/products/Products";
 import ProductSearch from "../components/products/ProductSearch";
@@ -10,7 +10,7 @@ import SignupForm from "../components/users/SignupForm";
 import UserProfile from "../components/users/UserProfile";
 import UpdateAddress from "../components/users/UpdateAddress";
 import OrderProduct from "../components/order/OrderProduct";
-import NotFoundPage from '../components/common/NotFoundPage';
+import NotFoundPage from "../components/common/NotFoundPage";
 
 export default () => (
   <BrowserRouter>

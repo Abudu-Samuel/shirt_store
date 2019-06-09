@@ -226,8 +226,7 @@ export const getCartId = () => dispatch => {
 export const updateQuantityAction = (item_id, quantity) => async dispatch => {
   try {
     const response = axios.put(
-      `https://backendapi.turing.com/shoppingcart/update/${item_id}`,
-      {
+      `https://backendapi.turing.com/shoppingcart/update/${item_id}`, {
         quantity
       }
     );
@@ -322,6 +321,7 @@ export const facebookAuthentication = token => dispatch => {
 
 export const logOutAction = () => dispatch => {
   localStorage.removeItem("accessToken");
+  localStorage.removeItem("cartId");
   dispatch(logOut({}));
 };
 

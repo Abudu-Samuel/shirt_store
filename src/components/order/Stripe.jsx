@@ -1,14 +1,13 @@
 import React from "react";
 import StripeCheckout from "react-stripe-checkout";
-import { Redirect } from "react-router-dom";
+import { withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import { bindActionCreators } from "redux";
 import * as actionCreators from "../../redux/actions/actionCreators";
 
 class Checkout extends React.Component {
   state = {
-    tax_id: 2,
-    isPaymentSuccessful: false
+    tax_id: 2
   };
 
   handleCartOrder = () => {
@@ -28,41 +27,32 @@ class Checkout extends React.Component {
 
     const data = { stripeToken, order_id, description, amount };
 
-    this.props.actions.createPaymentAction(data).then(() => {
-      this.setState({
-        isPaymentSuccessful: true
-      });
-    });
+    this.props.actions.createPaymentAction(data);
   };
 
   onToken = async token => {
     await this.handleCartOrder();
     await this.handleOrderPayment(token);
+    this.props.history.push("/");
   };
 
   render() {
     return (
-      <div>
-        {this.state.isPaymentSuccessful ? (
-          <Redirect to="/" />
-        ) : (
-          <StripeCheckout
-            amount={Number(this.props.cartTotal.total_amount) * 100}
-            image="https://www.jumia.com.ng/images/oshun/cart/empty-cart.png"
-            locale="auto"
-            name="Shop Mate"
-            stripeKey="pk_test_NcwpaplBCuTL6I0THD44heRe"
-            token={this.onToken}
-          >
-            <button
-              style={{ background: "#f7436b", color: "#fff" }}
-              className="btn btn-md btn-block mb-3"
-            >
-              pay with stripe
-            </button>
-          </StripeCheckout>
-        )}
-      </div>
+      <StripeCheckout
+        amount={Number(this.props.cartTotal.total_amount) * 100}
+        image="https://www.jumia.com.ng/images/oshun/cart/empty-cart.png"
+        locale="auto"
+        name="Shop Mate"
+        stripeKey="pk_test_NcwpaplBCuTL6I0THD44heRe"
+        token={this.onToken}
+      >
+        <button
+          style={{ background: "#f7436b", color: "#fff" }}
+          className="btn btn-md btn-block mb-3"
+        >
+          pay with stripe
+        </button>
+      </StripeCheckout>
     );
   }
 }
@@ -76,7 +66,9 @@ const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(actionCreators, dispatch)
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Checkout);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Checkout)
+);

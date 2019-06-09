@@ -127,6 +127,15 @@ export default (state = intialState, action) => {
         }
       };
 
+    case types.LOG_OUT:
+      return {
+        ...state,
+        cart: [],
+        cartTotal: {
+          total_amount: "$0.00"
+        }
+      };
+
     default:
       return state;
   }

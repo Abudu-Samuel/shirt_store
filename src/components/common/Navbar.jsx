@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link, Redirect } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import { connect } from "react-redux";
 import jwt from "jsonwebtoken";
 import { bindActionCreators } from "redux";
@@ -8,8 +8,7 @@ import * as actionCreators from "../../redux/actions/actionCreators";
 
 class Navbar extends Component {
   state = {
-    searchKeyWord: "",
-    isLoggedIn: true
+    searchKeyWord: ""
   };
 
   componentDidMount() {
@@ -30,10 +29,7 @@ class Navbar extends Component {
 
   handleLogOut = () => {
     this.props.actions.logOutAction();
-    this.setState({
-      isLoggedIn: false
-    });
-    return <Redirect to="/" />;
+    this.props.history.push("/");
   };
 
   render() {
@@ -207,7 +203,9 @@ const mapDispatchToProps = dispatch => ({
   actions: bindActionCreators(actionCreators, dispatch)
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Navbar);
+export default withRouter(
+  connect(
+    mapStateToProps,
+    mapDispatchToProps
+  )(Navbar)
+);
