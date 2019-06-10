@@ -6,7 +6,7 @@ import { bindActionCreators } from "redux";
 import cart from "../../assets/images/icons/bag/black.png";
 import * as actionCreators from "../../redux/actions/actionCreators";
 
-class Navbar extends Component {
+export class Navbar extends Component {
   state = {
     searchKeyWord: ""
   };

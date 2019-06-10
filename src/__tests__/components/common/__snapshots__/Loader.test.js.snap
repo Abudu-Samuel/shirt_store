@@ -1,0 +1,15 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Loader /> renders without crashing 1`] = `
+<div
+  className="loader"
+>
+  <Loader
+    className="loader"
+    color="#f7436b"
+    height="100"
+    type="CradleLoader"
+    width="100"
+  />
+</div>
+`;

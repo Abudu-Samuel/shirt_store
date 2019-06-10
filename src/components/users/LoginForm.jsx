@@ -63,7 +63,7 @@ class LoginForm extends Component {
                       name="email"
                       onChange={this.handleChange}
                       type="email"
-                      id="materialFormCardEmailEx"
+                      id="email"
                       className={
                         errors.validation && errors.validation.email
                           ? "error-input-field"

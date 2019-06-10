@@ -7,7 +7,7 @@ import Loader from "../common/Loader";
 import QuantityButton from "../common/QuantityButton";
 import * as actionCreators from "../../redux/actions/actionCreators";
 
-class ProductDetails extends Component {
+export class ProductDetails extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -114,13 +114,7 @@ class ProductDetails extends Component {
   };
 
   render() {
-    const {
-      name,
-      price,
-      image,
-      image_2,
-      description
-    } = this.props.product;
+    const { name, price, image, image_2, description } = this.props.product;
 
     return (
       <div className="container body">

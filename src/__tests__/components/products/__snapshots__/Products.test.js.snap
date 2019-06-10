@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Products /> renders without crashing 1`] = `
+<div>
+  <_default
+    className="container"
+    slides={
+      Array [
+        <img
+          alt="1"
+          className="img-fluid slide-img"
+          src="slide-ez.jpg"
+        />,
+        <img
+          alt="2"
+          className="img-fluid slide-img"
+          src="slide-ex.jpg"
+        />,
+        <img
+          alt="3"
+          className="img-fluid slide-img"
+          src="men.jpg"
+        />,
+      ]
+    }
+  />
+  <_default
+    handleCardFlip={[Function]}
+    handleProductCategories={[Function]}
+    handleProductDepartments={[Function]}
+    isFlipped={false}
+  />
+  <_default
+    handlePagination={[Function]}
+    handleSingleProduct={[Function]}
+    pages={1}
+    products={Array []}
+  />
+</div>
+`;

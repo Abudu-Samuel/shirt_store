@@ -1,0 +1,186 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AddressForm /> renders without crashing 1`] = `
+<div>
+  <div>
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-6 mb-3"
+      >
+        <div
+          className="md-form"
+        >
+          <i
+            className="fa fa-address-card prefix grey-text"
+            style={
+              Object {
+                "fontSize": "1.6rem",
+              }
+            }
+          />
+          <label
+            className="font-weight-light label"
+          >
+            Your adress
+          </label>
+          <input
+            className="initial"
+            id="materialFormCardNameEx"
+            name="address"
+            type="text"
+            value=""
+          />
+          <span
+            className="field-error d-flex justify-content-end"
+          />
+        </div>
+      </div>
+      <div
+        className="col-md-6 mb-3"
+      >
+        <div
+          className="md-form"
+        >
+          <i
+            className="fa fa-city prefix grey-text"
+            style={
+              Object {
+                "fontSize": "1.6rem",
+              }
+            }
+          />
+          <input
+            className="initial"
+            id="materialFormCardEmailEx"
+            name="city"
+            type="text"
+            value=""
+          />
+          <span
+            className="field-error d-flex justify-content-end"
+          />
+          <label
+            className="font-weight-light label"
+          >
+            Your city
+          </label>
+        </div>
+      </div>
+      <div
+        className="col-md-6 mb-3"
+      >
+        <div
+          className="md-form"
+        >
+          <i
+            className="fa fa-mail-bulk prefix grey-text"
+            style={
+              Object {
+                "fontSize": "1.6rem",
+              }
+            }
+          />
+          <input
+            className="initial"
+            id="materialFormCardEmailEx"
+            name="postalCode"
+            type="email"
+            value=""
+          />
+          <span
+            className="field-error d-flex justify-content-end"
+          />
+          <label
+            className="font-weight-light label"
+          >
+            Your postal code
+          </label>
+        </div>
+      </div>
+      <div
+        className="col-md-6 mb-3"
+      >
+        <div
+          className="md-form"
+        >
+          <i
+            className="fa fa-globe-europe prefix grey-text"
+            style={
+              Object {
+                "fontSize": "1.6rem",
+              }
+            }
+          />
+          <input
+            className="initial"
+            id="materialFormCardEmailEx"
+            name="country"
+            type="email"
+            value=""
+          />
+          <span
+            className="field-error d-flex justify-content-end"
+          />
+          <label
+            className="font-weight-light label"
+          >
+            Your country
+          </label>
+        </div>
+      </div>
+      <div
+        className="col-md-12 mb-3"
+      >
+        <div
+          className="md-form"
+        >
+          <i
+            className="fa fa-address-card prefix grey-text"
+            style={
+              Object {
+                "fontSize": "1.6rem",
+              }
+            }
+          />
+          <label
+            className="font-weight-light label"
+          >
+            Your region
+          </label>
+          <select
+            className="initial browser-default custom-select"
+            name="shippingRegion"
+          >
+            <option
+              defaultValue={true}
+              value="1"
+            >
+              Open this select menu
+            </option>
+            <option
+              value="2"
+            >
+              US / Canada
+            </option>
+            <option
+              value="3"
+            >
+              Europe
+            </option>
+            <option
+              value="4"
+            >
+              Rest of World
+            </option>
+          </select>
+          <span
+            className="field-error d-flex justify-content-end"
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

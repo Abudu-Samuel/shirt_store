@@ -9,7 +9,7 @@ import sliderThree from "../../assets/images/icons/bag/men.jpg";
 import FlipCards from "./FlipCards";
 import ProductList from "./ProductList";
 
-class Products extends Component {
+export class Products extends Component {
   state = {
     isFlipped: false
   };

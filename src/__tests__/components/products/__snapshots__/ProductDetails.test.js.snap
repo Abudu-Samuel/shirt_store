@@ -1,0 +1,382 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ProductDetails /> renders without crashing 1`] = `
+<div
+  className="container body"
+>
+  <div
+    className=""
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-1"
+      />
+      <div
+        className="col-md-4 mt-5 mb-5"
+      >
+        <div
+          style={
+            Object {
+              "display": "flex",
+              "justifyContent": "center",
+            }
+          }
+        >
+          <img
+            alt=""
+            className="img-dt img-fluid z-depth-3 mr-4"
+            onClick={[Function]}
+            src="arc-d-triomphe-thumbnail.gif"
+          />
+          <img
+            alt=""
+            className="img-dt img-fluid z-depth-3"
+            onClick={[Function]}
+            src="arc-d-triomphe-2.gif"
+          />
+        </div>
+      </div>
+      <div
+        className="col-md-6 offset-md-1 mt-5 mb-5"
+      >
+        <p
+          className="grey-text"
+        >
+          Home . All Categories . Men's clothings and accessories
+        </p>
+        <div>
+          <StarRatings
+            changeRating={null}
+            gradientPathName=""
+            ignoreInlineStyles={false}
+            numberOfStars={5}
+            rating={2.403}
+            starDimension="20px"
+            starEmptyColor="rgb(203, 211, 227)"
+            starHoverColor="rgb(230, 67, 47)"
+            starRatedColor="gold"
+            starSpacing="3px"
+            svgIconPath="m25,1 6,17h18l-14,11 5,17-15-10-15,10 5-17-14-11h18z"
+            svgIconViewBox="0 0 51 48"
+            typeOfWidget="Star"
+          />
+        </div>
+        <h3
+          className="mt-1"
+        >
+          Arc d'Triomphe
+        </h3>
+        <h6
+          className="mt-1"
+        >
+          This beautiful and iconic T-shirt
+        </h6>
+        <h4
+          style={
+            Object {
+              "color": "#f7436b",
+            }
+          }
+        >
+          $
+          14.99
+        </h4>
+        <h6
+          className="grey-text mt-3 mb-3"
+        >
+          Color
+        </h6>
+        <div
+          className="mb-3"
+        >
+          <button
+            alt=""
+            className="btn-circle hov btn-sm mr-3"
+            style={
+              Object {
+                "background": "#6EB2FB",
+              }
+            }
+          />
+          <button
+            alt=""
+            className="btn-circle hov btn-sm mr-3"
+            style={
+              Object {
+                "background": "#00D3CA",
+              }
+            }
+          />
+          <button
+            alt=""
+            className="btn-circle hov btn-sm mr-3"
+            style={
+              Object {
+                "background": "#F62F5E",
+              }
+            }
+          />
+          <button
+            alt=""
+            className="btn-circle hov btn-sm mr-3"
+            style={
+              Object {
+                "background": "#FE5C07",
+              }
+            }
+          />
+          <button
+            alt=""
+            className="btn-circle hov btn-sm mr-3"
+            style={
+              Object {
+                "background": "#F8E71C",
+              }
+            }
+          />
+          <button
+            alt=""
+            className="btn-circle hov btn-sm mr-3"
+            style={
+              Object {
+                "background": "#7ED321",
+              }
+            }
+          />
+          <button
+            alt=""
+            className="btn-circle hov btn-sm mr-3"
+            style={
+              Object {
+                "background": "#9013FE",
+              }
+            }
+          />
+        </div>
+        <h6
+          className="grey-text mt-3 mb-3"
+        >
+          Size
+        </h6>
+        <div
+          className="mb-3"
+        >
+          <button
+            alt=""
+            className="btn-sm mr-3 mb-2"
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "#EFEFEF",
+                "color": "#000000",
+                "height": 30,
+                "width": 62,
+              }
+            }
+          >
+            XS
+          </button>
+          <button
+            alt=""
+            className="btn-sm mr-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "#EFEFEF",
+                "color": "#000000",
+                "height": 30,
+                "width": 62,
+              }
+            }
+          >
+            S
+          </button>
+          <button
+            alt=""
+            className="btn-sm mr-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "#EFEFEF",
+                "color": "#000000",
+                "height": 30,
+                "width": 62,
+              }
+            }
+          >
+            M
+          </button>
+          <button
+            alt=""
+            className="btn-sm mr-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "#EFEFEF",
+                "color": "#000000",
+                "height": 30,
+                "width": 62,
+              }
+            }
+          >
+            L
+          </button>
+          <button
+            alt=""
+            className="btn-sm mr-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "#EFEFEF",
+                "color": "#000000",
+                "height": 30,
+                "width": 62,
+              }
+            }
+          >
+            XL
+          </button>
+          <button
+            alt=""
+            className="btn-sm mr-3"
+            onClick={[Function]}
+            style={
+              Object {
+                "background": "#EFEFEF",
+                "color": "#000000",
+                "height": 30,
+                "width": 62,
+              }
+            }
+          >
+            XXL
+          </button>
+        </div>
+        <h6
+          className="grey-text mt-3 mb-3"
+        >
+          Quantity
+        </h6>
+        <_default
+          handleChange={[Function]}
+          handleQuantity={[Function]}
+          quantity={1}
+        />
+        <button
+          className="btn btn-large btn-round"
+          data-target="#modalAbandonedCart"
+          data-toggle="modal"
+          onClick={[Function]}
+          style={
+            Object {
+              "background": "#f7436b",
+              "borderRadius": 50,
+              "color": "#ffffff",
+            }
+          }
+        >
+          Add to cart
+        </button>
+        <div
+          aria-hidden="true"
+          aria-labelledby="myModalLabel"
+          className="modal fade right"
+          data-backdrop="false"
+          id="modalAbandonedCart"
+          role="dialog"
+          tabIndex="-1"
+        >
+          <div
+            className="modal-dialog modal-dialog-centered modal-notify modal-info"
+            role="document"
+          >
+            <div
+              className="modal-content"
+            >
+              <div
+                className="modal-header"
+              >
+                <p
+                  className="heading"
+                >
+                  Product in the cart
+                </p>
+                <button
+                  aria-label="Close"
+                  className="close"
+                  data-dismiss="modal"
+                  type="button"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="white-text"
+                  >
+                    ×
+                  </span>
+                </button>
+              </div>
+              <div
+                className="modal-body"
+              >
+                <div
+                  className="row"
+                >
+                  <div
+                    className="col-md-3"
+                  >
+                    <p />
+                    <p
+                      className="text-center"
+                    >
+                      <i
+                        className="fas fa-shopping-cart fa-4x"
+                      />
+                    </p>
+                  </div>
+                  <div
+                    className="col-md-9"
+                  >
+                    <p>
+                      Do you need more time to make a purchase decision?
+                    </p>
+                    <p>
+                      No pressure, your product will be waiting for you in the cart.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div
+                className="modal-footer justify-content-center"
+              >
+                <Link
+                  to="/cart"
+                >
+                  <button
+                    className="btn btn-md btn-info"
+                  >
+                    Go to cart
+                  </button>
+                </Link>
+                <Link
+                  to="/"
+                >
+                  <button
+                    className="btn btn-md btn-outline-info waves-effect"
+                  >
+                    continue shopping
+                  </button>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="col-md-1"
+      />
+    </div>
+  </div>
+</div>
+`;

@@ -1,0 +1,172 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Navbar /> renders without crashing 1`] = `
+<div>
+  <div
+    className="container-fluid mt-3"
+  >
+    <div
+      className="row"
+    >
+      <div
+        className="col-md-4 col-lg-4 text-center"
+      >
+        <div>
+          Hi!
+          <h6
+            style={
+              Object {
+                "display": "inline-block",
+              }
+            }
+          >
+            <Link
+              className="ml-1 mr-1"
+              to="/login"
+            >
+              <span
+                style={
+                  Object {
+                    "color": "#f7436b",
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                Sign in
+              </span>
+            </Link>
+            or 
+            <Link
+              to="/register"
+            >
+              <span
+                style={
+                  Object {
+                    "color": "#f7436b",
+                    "cursor": "pointer",
+                  }
+                }
+              >
+                Register
+              </span>
+            </Link>
+          </h6>
+        </div>
+      </div>
+      <div
+        className="col-md-4 col-lg-4 text-center"
+      >
+        <h6>
+          Daily Deals 
+          <span
+            style={
+              Object {
+                "marginLeft": 15,
+              }
+            }
+          >
+            Sell
+          </span>
+           
+          <span
+            style={
+              Object {
+                "marginLeft": 15,
+              }
+            }
+          >
+            Help
+          </span>
+        </h6>
+      </div>
+      <div
+        className="col-md-4 col-lg-4"
+      >
+        <span>
+           
+          <Link
+            to="/cart"
+          >
+            <div
+              className="tester"
+              style={
+                Object {
+                  "cursor": "pointer",
+                }
+              }
+            >
+              <img
+                alt=""
+                className="mb-1 img-merge"
+                src="black.png"
+              />
+              <button
+                alt=""
+                className="btn-circle btn-danger btn-sm btn-merge-two"
+              >
+                0
+              </button>
+            </div>
+          </Link>
+          <h6
+            className="text"
+          >
+            Your bag:
+            <span
+              className="ml-1"
+            />
+          </h6>
+        </span>
+      </div>
+    </div>
+  </div>
+  <nav
+    className="navbar container-fluid navbar-expand-lg navbar-light nav-color mb-4"
+  >
+    <Link
+      className="nav-space navbar-brand text-center"
+      style={
+        Object {
+          "color": "#f7436b",
+        }
+      }
+      to="/"
+    >
+      SHOP MATE
+    </Link>
+    <button
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+      className="navbar-toggler"
+      data-target="#navbarSupportedContent"
+      data-toggle="collapse"
+      type="button"
+    >
+      <span
+        className="navbar-toggler-icon"
+      />
+    </button>
+    <div
+      className="collapse navbar-collapse"
+      id="navbarSupportedContent"
+    >
+      <ul
+        className="navbar-nav mx-auto item-space"
+      />
+      <div
+        className="form-inline my-2 my-sm-1 search-space"
+      >
+        <input
+          aria-label="Search"
+          className="form-control input-form mr-sm-1"
+          name="searchKeyWord"
+          onChange={[Function]}
+          placeholder="search anything"
+          type="search"
+        />
+      </div>
+    </div>
+  </nav>
+</div>
+`;
