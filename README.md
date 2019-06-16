@@ -24,7 +24,7 @@
 - Users can add items to cart
 - Users can remove items from cart
 - Users can update their profile
-- Users can make payment to orders placed
+- Users can make payment to orders placed.
 
 ## Technology used for development
 
