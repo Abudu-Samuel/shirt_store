@@ -60,7 +60,7 @@ export class Products extends Component {
         <Carousel className="container" slides={slides} />
 
         <h4 className="text-center">Departments</h4>
-        <hr />
+        <hr className="style" />
         <p
           style={{ cursor: "pointer", color: "#f7436b" }}
           className="text-center"
