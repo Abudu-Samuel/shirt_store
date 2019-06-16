@@ -16,39 +16,47 @@ class Orders extends Component {
   };
 
   render() {
+    console.log(this.props.orderData.length);
     return (
       <div className="container">
-        {Object.keys(this.props.orderData).length < 1 ||
-        this.props.isFetching ? (
+        {this.props.orderData.length < 1 || this.props.isFetching ? (
           <Loader />
         ) : (
-          <div className="row mt-5">
-            {this.props.orderData.map(order => (
-              <div key={order.order_id} className="col-md-3 mb-3">
-                <Link to={`/orders/${order.order_id}`}>
-                  <div
-                    onClick={() => this.handleSingleOrder(order.order_id)}
-                    style={{ cursor: "pointer" }}
-                    className="card"
-                  >
-                    <div className="card-body">
-                      {order.created_on === undefined ? (
-                        ""
-                      ) : (
-                        <div>
-                          <p>
-                            {" "}
-                            <i className="fas fa-check-circle green-text" />{" "}
-                            Ordered on {order.created_on.slice(0, 10)}
-                          </p>
-                          <p className="text-center">Click to see details</p>
+          <div className=" mt-5">
+            {this.props.orderData.length === undefined ? (
+              <Loader />
+            ) : (
+              <div className="row">
+                {this.props.orderData.map(order => (
+                  <div key={order.order_id} className="col-md-3 mb-3">
+                    <Link to={`/orders/${order.order_id}`}>
+                      <div
+                        onClick={() => this.handleSingleOrder(order.order_id)}
+                        style={{ cursor: "pointer" }}
+                        className="card"
+                      >
+                        <div className="card-body">
+                          {order.created_on === undefined ? (
+                            ""
+                          ) : (
+                            <div>
+                              <p>
+                                {" "}
+                                <i className="fas fa-check-circle green-text" />{" "}
+                                Ordered on {order.created_on.slice(0, 10)}
+                              </p>
+                              <p className="text-center">
+                                Click to see details
+                              </p>
+                            </div>
+                          )}
                         </div>
-                      )}
-                    </div>
+                      </div>
+                    </Link>
                   </div>
-                </Link>
+                ))}
               </div>
-            ))}
+            )}
           </div>
         )}
       </div>

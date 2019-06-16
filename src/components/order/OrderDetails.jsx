@@ -31,16 +31,22 @@ class OrderDetails extends Component {
                           Order number {order.order_id}
                         </p>
                         <p className="grey-text">
-                          Product: {order.product_name}
+                          Color: {order.attributes.split(",")[1]}
                         </p>
                         <p className="grey-text">
                           Quantity: {order.quantity}{" "}
                           {order.quantity > 1 ? "items" : "item"}
                         </p>
+                        <p className="grey-text">
+                          Size: {order.attributes.split(",")[0].toUpperCase()}
+                        </p>
                       </div>
                       <div className="col-md-6">
                         <h5>Payment information</h5>
                         <hr />
+                        <p className="grey-text">
+                          Product: {order.product_name}
+                        </p>
                         <p className="grey-text">Payment method: card</p>
                         <p className="grey-text">
                           Item amount: ${order.unit_cost}

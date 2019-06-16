@@ -33,7 +33,7 @@ class Cart extends Component {
   };
 
   render() {
-    console.log(this.props.cart[0]);
+    console.log(this.props.userData);
     return (
       <div>
         {!this.props.isFetching ? (
@@ -161,7 +161,7 @@ class Cart extends Component {
                       shop
                     </button>
                   </Link>
-                  {Object.keys(this.props.userData).length > 0 ? (
+                  {localStorage.getItem("accessToken") ? (
                     <Link to="/order">
                       <button
                         className="btn btn-sm"
@@ -201,13 +201,11 @@ class Cart extends Component {
 }
 
 const mapStateToProps = ({
-  products: { cart, isFetching, updateQuantity },
-  users: { userData }
+  products: { cart, isFetching, updateQuantity }
 }) => ({
   cart,
   isFetching,
-  updateQuantity,
-  userData
+  updateQuantity
 });
 
 const mapDispatchToProps = dispatch => ({

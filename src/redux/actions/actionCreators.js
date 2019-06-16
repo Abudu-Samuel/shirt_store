@@ -416,7 +416,7 @@ export const fetchAllOrders = () => dispatch => {
       }
     })
     .then(response => {
-      dispatch(fetchOrderSuccess(response.data.slice(0, 16)))
+      dispatch(fetchOrderSuccess(response.data))
       dispatch(isFetching(false));
     })
 }
