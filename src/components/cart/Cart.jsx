@@ -33,7 +33,6 @@ class Cart extends Component {
   };
 
   render() {
-    console.log(this.props.userData);
     return (
       <div>
         {!this.props.isFetching ? (

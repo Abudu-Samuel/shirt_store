@@ -16,7 +16,6 @@ class Orders extends Component {
   };
 
   render() {
-    console.log(this.props.orderData.length);
     return (
       <div className="container">
         {this.props.orderData.length < 1 || this.props.isFetching ? (
