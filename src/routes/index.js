@@ -10,6 +10,8 @@ import SignupForm from "../components/users/SignupForm";
 import UserProfile from "../components/users/UserProfile";
 import UpdateAddress from "../components/users/UpdateAddress";
 import OrderProduct from "../components/order/OrderProduct";
+import Orders from "../components/order/Orders";
+import OrderDetails from "../components/order/OrderDetails";
 import NotFoundPage from "../components/common/NotFoundPage";
 
 export default () => (
@@ -17,24 +19,26 @@ export default () => (
     <Fragment>
       <div>
         <Navbar />
-      </div>
+      </div>{" "}
       <Switch>
-        <Route exact path="/" component={Products} />
+        <Route exact path="/" component={Products} />{" "}
         <Route
           exact
           path="/products/search/query=:query"
           component={ProductSearch}
-        />
-        <Route exact path="/products/:product_id" component={ProductDetails} />
-        <Route exact path="/cart" component={Cart} />
-        <Route exact path="/login" component={LoginForm} />
-        <Route exact path="/register" component={SignupForm} />
-        <Route exact path="/profile" component={UserProfile} />
-        <Route exact path="/profile" component={UserProfile} />
-        <Route exact path="/edit_address" component={UpdateAddress} />
-        <Route exact path="/order" component={OrderProduct} />
-        <Route component={NotFoundPage} />
-      </Switch>
-    </Fragment>
+        />{" "}
+        <Route exact path="/products/:product_id" component={ProductDetails} />{" "}
+        <Route exact path="/cart" component={Cart} />{" "}
+        <Route exact path="/login" component={LoginForm} />{" "}
+        <Route exact path="/register" component={SignupForm} />{" "}
+        <Route exact path="/profile" component={UserProfile} />{" "}
+        <Route exact path="/profile" component={UserProfile} />{" "}
+        <Route exact path="/edit_address" component={UpdateAddress} />{" "}
+        <Route exact path="/order" component={OrderProduct} />{" "}
+        <Route exact path="/orders" component={Orders} />{" "}
+        <Route exact path="/orders/:order_id" component={OrderDetails} />{" "}
+        <Route component={NotFoundPage} />{" "}
+      </Switch>{" "}
+    </Fragment>{" "}
   </BrowserRouter>
 );

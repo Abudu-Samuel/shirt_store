@@ -15,7 +15,6 @@
     "keymirror": "^0.1.1",
     "moxios": "^0.4.0",
     "react": "^16.8.6",
-    "react-card-flip": "^0.7.0",
     "react-dom": "^16.8.6",
     "react-facebook-login": "^4.1.1",
     "react-loader-spinner": "^2.3.0",

@@ -386,3 +386,8 @@ body {
 .field-error {
   color: #f7436b;
 }
+
+.category:hover {
+  color: #f7436b;
+  cursor: pointer;
+}

@@ -16,7 +16,8 @@ export class ProductDetails extends Component {
       thumbnail: "",
       cart_id: "",
       product_id: "",
-      attributes: ""
+      size: "",
+      color: ""
     };
   }
 
@@ -57,36 +58,11 @@ export class ProductDetails extends Component {
   };
 
   handleSize = size => {
-    if (size === "xs") {
-      this.setState({
-        attributes: "xs"
-      });
-    }
-    if (size === "s") {
-      this.setState({
-        attributes: "s"
-      });
-    }
-    if (size === "m") {
-      this.setState({
-        attributes: "m"
-      });
-    }
-    if (size === "l") {
-      this.setState({
-        attributes: "l"
-      });
-    }
-    if (size === "xl") {
-      this.setState({
-        attributes: "xl"
-      });
-    }
-    if (size === "xxl") {
-      this.setState({
-        attributes: "xxl"
-      });
-    }
+    this.setState({ size });
+  };
+
+  handleColor = color => {
+    this.setState({ color });
   };
 
   changeImage = img => {
@@ -108,14 +84,20 @@ export class ProductDetails extends Component {
   };
 
   addProductToCart = () => {
-    const { cart_id, product_id, attributes } = this.state;
-    const data = { cart_id, product_id, attributes };
+    const { cart_id, product_id, size, color } = this.state;
+    const data = { cart_id, product_id, attributes: `${size}, ${color}` };
     this.props.actions.addToCartAction(data, this.state.quantity);
   };
 
   render() {
-    const { name, price, image, image_2, description } = this.props.product;
-
+    const {
+      name,
+      price,
+      image,
+      image_2,
+      description,
+      discounted_price
+    } = this.props.product;
     return (
       <div className="container body">
         <div className="">
@@ -163,43 +145,96 @@ export class ProductDetails extends Component {
                 </div>
                 <h3 className="mt-1">{name}</h3>
                 <h6 className="mt-1">{description}</h6>
-                <h4 style={{ color: "#f7436b" }}>${price}</h4>
+                {discounted_price === "0.00" ? (
+                  <h4 style={{ color: "#f7436b" }}>${price}</h4>
+                ) : (
+                  <h4 style={{ color: "#f7436b" }}>${discounted_price}</h4>
+                )}
                 <h6 className="grey-text mt-3 mb-3">Color</h6>
                 <div className="mb-3">
                   <button
-                    style={{ background: "#6EB2FB" }}
+                    style={{
+                      background: "#6EB2FB",
+                      boxShadow:
+                        this.state.color === "blue"
+                          ? "0 0px 2px 4px rgb(16,114,181)"
+                          : ""
+                    }}
                     className="btn-circle hov btn-sm mr-3"
                     alt=""
+                    onClick={() => this.handleColor("blue")}
                   />
                   <button
-                    style={{ background: "#00D3CA" }}
+                    style={{
+                      background: "#00D3CA",
+                      boxShadow:
+                        this.state.color === "teal"
+                          ? "0 0px 2px 4px rgb(16,114,181)"
+                          : ""
+                    }}
                     className="btn-circle hov btn-sm mr-3"
                     alt=""
+                    onClick={() => this.handleColor("teal")}
                   />
                   <button
-                    style={{ background: "#F62F5E" }}
+                    style={{
+                      background: "#F62F5E",
+                      boxShadow:
+                        this.state.color === "red"
+                          ? "0 0px 2px 4px rgb(16,114,181)"
+                          : ""
+                    }}
                     className="btn-circle hov btn-sm mr-3"
                     alt=""
+                    onClick={() => this.handleColor("red")}
                   />
                   <button
-                    style={{ background: "#FE5C07" }}
+                    style={{
+                      background: "#FE5C07",
+                      boxShadow:
+                        this.state.color === "orange"
+                          ? "0 0px 2px 4px rgb(16,114,181)"
+                          : ""
+                    }}
                     className="btn-circle hov btn-sm mr-3"
                     alt=""
+                    onClick={() => this.handleColor("orange")}
                   />
                   <button
-                    style={{ background: "#F8E71C" }}
+                    style={{
+                      background: "#F8E71C",
+                      boxShadow:
+                        this.state.color === "yellow"
+                          ? "0 0px 2px 4px rgb(16,114,181)"
+                          : ""
+                    }}
                     className="btn-circle hov btn-sm mr-3"
                     alt=""
+                    onClick={() => this.handleColor("yellow")}
                   />
                   <button
-                    style={{ background: "#7ED321" }}
+                    style={{
+                      background: "#7ED321",
+                      boxShadow:
+                        this.state.color === "green"
+                          ? "0 0px 2px 4px rgb(16,114,181)"
+                          : ""
+                    }}
                     className="btn-circle hov btn-sm mr-3"
                     alt=""
+                    onClick={() => this.handleColor("green")}
                   />
                   <button
-                    style={{ background: "#9013FE" }}
+                    style={{
+                      background: "#9013FE",
+                      boxShadow:
+                        this.state.color === "purple"
+                          ? "0 0px 2px 4px rgb(16,114,181)"
+                          : ""
+                    }}
                     className="btn-circle hov btn-sm mr-3"
                     alt=""
+                    onClick={() => this.handleColor("purple")}
                   />
                 </div>
                 <h6 className="grey-text mt-3 mb-3">Size</h6>
@@ -207,9 +242,8 @@ export class ProductDetails extends Component {
                   <button
                     style={{
                       background:
-                        this.state.attributes === "xs" ? "#f7436b" : "#EFEFEF",
-                      color:
-                        this.state.attributes === "xs" ? "#fff" : "#000000",
+                        this.state.size === "xs" ? "#f7436b" : "#EFEFEF",
+                      color: this.state.size === "xs" ? "#fff" : "#000000",
                       height: 30,
                       width: 62
                     }}
@@ -222,8 +256,8 @@ export class ProductDetails extends Component {
                   <button
                     style={{
                       background:
-                        this.state.attributes === "s" ? "#f7436b" : "#EFEFEF",
-                      color: this.state.attributes === "s" ? "#fff" : "#000000",
+                        this.state.size === "s" ? "#f7436b" : "#EFEFEF",
+                      color: this.state.size === "s" ? "#fff" : "#000000",
                       height: 30,
                       width: 62
                     }}
@@ -236,8 +270,8 @@ export class ProductDetails extends Component {
                   <button
                     style={{
                       background:
-                        this.state.attributes === "m" ? "#f7436b" : "#EFEFEF",
-                      color: this.state.attributes === "m" ? "#fff" : "#000000",
+                        this.state.size === "m" ? "#f7436b" : "#EFEFEF",
+                      color: this.state.size === "m" ? "#fff" : "#000000",
                       height: 30,
                       width: 62
                     }}
@@ -250,8 +284,8 @@ export class ProductDetails extends Component {
                   <button
                     style={{
                       background:
-                        this.state.attributes === "l" ? "#f7436b" : "#EFEFEF",
-                      color: this.state.attributes === "l" ? "#fff" : "#000000",
+                        this.state.size === "l" ? "#f7436b" : "#EFEFEF",
+                      color: this.state.size === "l" ? "#fff" : "#000000",
                       height: 30,
                       width: 62
                     }}
@@ -264,9 +298,8 @@ export class ProductDetails extends Component {
                   <button
                     style={{
                       background:
-                        this.state.attributes === "xl" ? "#f7436b" : "#EFEFEF",
-                      color:
-                        this.state.attributes === "xl" ? "#fff" : "#000000",
+                        this.state.size === "xl" ? "#f7436b" : "#EFEFEF",
+                      color: this.state.size === "xl" ? "#fff" : "#000000",
                       height: 30,
                       width: 62
                     }}
@@ -279,9 +312,8 @@ export class ProductDetails extends Component {
                   <button
                     style={{
                       background:
-                        this.state.attributes === "xxl" ? "#f7436b" : "#EFEFEF",
-                      color:
-                        this.state.attributes === "xxl" ? "#fff" : "#000000",
+                        this.state.size === "xxl" ? "#f7436b" : "#EFEFEF",
+                      color: this.state.size === "xxl" ? "#fff" : "#000000",
                       height: 30,
                       width: 62
                     }}

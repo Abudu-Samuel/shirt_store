@@ -18,7 +18,8 @@ const intialState = {
   cartTotal: {
     total_amount: "$0.00"
   },
-  purchasedProduct: []
+  purchasedProduct: [],
+  catInDept: []
 };
 
 export default (state = intialState, action) => {
@@ -39,39 +40,39 @@ export default (state = intialState, action) => {
       return {
         ...state,
         products: action.payload,
-        pages: action.payload.count,
-        product: []
+          pages: action.payload.count,
+          product: []
       };
 
     case types.FETCH_PRODUCT_CATEGORY_SUCCESS:
       return {
         ...state,
         products: action.payload,
-        pages: action.payload.count,
-        category: action.id
+          pages: action.payload.count,
+          category: action.id
       };
 
     case types.FETCH_PRODUCT_DEPARTMENT_SUCCESS:
       return {
         ...state,
         products: action.payload,
-        pages: action.payload.count,
-        department: action.id
+          pages: action.payload.count,
+          department: action.id
       };
 
     case types.SEARCH_PRODUCT_SUCCESS:
       return {
         ...state,
         searchProducts: action.payload,
-        pages: action.payload.count,
-        query: action.query
+          pages: action.payload.count,
+          query: action.query
       };
 
     case types.FETCH_SINGLE_PRODUCT:
       return {
         ...state,
         product: action.payload,
-        updateQuantity: state.updateQuantity
+          updateQuantity: state.updateQuantity
       };
 
     case types.GET_CART_ID:
@@ -96,7 +97,7 @@ export default (state = intialState, action) => {
       return {
         ...state,
         cart: action.payload,
-        isFetching: true
+          isFetching: true
       };
 
     case types.REMOVE_ITEM:
@@ -121,22 +122,28 @@ export default (state = intialState, action) => {
       return {
         ...state,
         purchasedProduct: action.payload,
-        cart: [],
-        cartTotal: {
-          total_amount: "$0.00"
-        }
+          cart: [],
+          cartTotal: {
+            total_amount: "$0.00"
+          }
       };
 
     case types.LOG_OUT:
       return {
         ...state,
         cart: [],
-        cartTotal: {
-          total_amount: "$0.00"
-        }
+          cartTotal: {
+            total_amount: "$0.00"
+          }
       };
 
-    default:
-      return state;
+    case types.CAT_IN_DEPT:
+      return {
+        ...state,
+        catInDept: action.payload
+      }
+
+      default:
+        return state;
   }
 };

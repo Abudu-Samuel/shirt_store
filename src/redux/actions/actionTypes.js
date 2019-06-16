@@ -22,5 +22,8 @@ export default keymirror({
   UPDATE_ADDRESS: null,
   CREATE_ORDER: null,
   FACEBOOK_AUTH: null,
-  STRIPE_CHARGE: null
+  STRIPE_CHARGE: null,
+  FETCH_ALL_ORDERS: null,
+  FETCH_SINGLE_ORDER: null,
+  CAT_IN_DEPT: null
 });

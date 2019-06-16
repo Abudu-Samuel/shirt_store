@@ -109,10 +109,26 @@ const createPayment = payload => ({
   payload
 });
 
+const fetchOrderSuccess = payload => ({
+  type: types.FETCH_ALL_ORDERS,
+  payload
+});
+
+
+const fetchSingleOrderSuccess = payload => ({
+  type: types.FETCH_SINGLE_ORDER,
+  payload
+});
+
+const fetchCatInDept = payload => ({
+  type: types.CAT_IN_DEPT,
+  payload
+})
+
 export const fetchAllProducts = page => dispatch => {
   dispatch(isFetching(true));
   return axios
-    .get(`https://backendapi.turing.com/products?page=${page}&limit=8`)
+    .get(`https://backendapi.turing.com/products?page=${page}&limit=6`)
     .then(response => {
       dispatch(fetchProductsSuccess(response.data));
       dispatch(isFetching(false));
@@ -126,7 +142,7 @@ export const fetchProductCategory = (id, page) => dispatch => {
   dispatch(isFetching(true));
   return axios
     .get(
-      `https://backendapi.turing.com/products/inCategory/${id}?page=${page}&limit=8`
+      `https://backendapi.turing.com/products/inCategory/${id}?page=${page}&limit=6`
     )
     .then(response => {
       dispatch(fetchCategorySuccess(response.data, id));
@@ -142,10 +158,11 @@ export const fetchProductDepartment = (id, page) => dispatch => {
   dispatch(isFetching(true));
   return axios
     .get(
-      `https://backendapi.turing.com/products/inDepartment/${id}?page=${page}&limit=8`
+      `https://backendapi.turing.com/products/inDepartment/${id}?page=${page}&limit=6`
     )
     .then(response => {
       dispatch(fetchDepartmentSuccess(response.data, id));
+      dispatch(categoryInDepartment(id))
       dispatch(isFetching(false));
     })
     .catch(error => {
@@ -154,11 +171,21 @@ export const fetchProductDepartment = (id, page) => dispatch => {
     });
 };
 
+export const categoryInDepartment = id => dispatch => {
+  dispatch(isFetching(true));
+  return axios.get(`https://backendapi.turing.com/categories/inDepartment/${id}`)
+    .then(response => {
+      dispatch(fetchCatInDept(response.data))
+      dispatch(isFetching(false));
+
+    });
+};
+
 export const searchProducts = (query, page) => dispatch => {
   dispatch(isFetching(true));
   return axios
     .get(
-      `https://backendapi.turing.com/products/search?query_string=${query}&page=${page}&limit=8`
+      `https://backendapi.turing.com/products/search?query_string=${query}&page=${page}&limit=4`
     )
     .then(response => {
       dispatch(searchProductSuccess(response.data, query));
@@ -380,3 +407,29 @@ export const createPaymentAction = data => dispatch => {
       toaster("success", "Payment was successful");
     });
 };
+
+export const fetchAllOrders = () => dispatch => {
+  dispatch(isFetching(true));
+  return axios.get("https://backendapi.turing.com/orders/inCustomer", {
+      headers: {
+        "USER-KEY": localStorage.getItem("accessToken")
+      }
+    })
+    .then(response => {
+      dispatch(fetchOrderSuccess(response.data.slice(0, 16)))
+      dispatch(isFetching(false));
+    })
+}
+
+export const fetchSingleOrder = id => dispatch => {
+  dispatch(isFetching(true));
+  return axios.get(`https://backendapi.turing.com/orders/${id}`, {
+      headers: {
+        "USER-KEY": localStorage.getItem("accessToken")
+      }
+    })
+    .then(response => {
+      dispatch(fetchSingleOrderSuccess(response.data));
+      dispatch(isFetching(false));
+    })
+}

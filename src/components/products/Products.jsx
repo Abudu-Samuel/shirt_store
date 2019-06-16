@@ -6,12 +6,11 @@ import Carousel from "../common/Carousel";
 import sliderOne from "../../assets/images/icons/bag/slide-ex.jpg";
 import sliderTwo from "../../assets/images/icons/bag/slide-ez.jpg";
 import sliderThree from "../../assets/images/icons/bag/men.jpg";
-import FlipCards from "./FlipCards";
 import ProductList from "./ProductList";
 
 export class Products extends Component {
   state = {
-    isFlipped: false
+    id: ""
   };
 
   componentDidMount() {
@@ -50,8 +49,7 @@ export class Products extends Component {
   };
 
   render() {
-    const { isFlipped } = this.state;
-    const { products, pages } = this.props;
+    const { products, pages, isFetching, catInDept } = this.props;
     const slides = [
       <img className="img-fluid slide-img" src={sliderTwo} alt="1" />,
       <img className="img-fluid slide-img" src={sliderOne} alt="2" />,
@@ -60,17 +58,36 @@ export class Products extends Component {
     return (
       <div>
         <Carousel className="container" slides={slides} />
-        <FlipCards
-          isFlipped={isFlipped}
-          handleCardFlip={this.handleCardFlip}
-          handleProductCategories={this.handleProductCategories}
-          handleProductDepartments={this.handleProductDepartments}
-        />
+
+        <h4 className="text-center">Departments</h4>
+        <hr />
+        <p
+          style={{ cursor: "pointer", color: "#f7436b" }}
+          className="text-center"
+        >
+          <span
+            onClick={() => this.handleProductDepartments(1)}
+            className="mr-4"
+          >
+            Regional
+          </span>{" "}
+          <span
+            onClick={() => this.handleProductDepartments(2)}
+            className="mr-4"
+          >
+            Nature
+          </span>
+          <span onClick={() => this.handleProductDepartments(3)}>Seasonal</span>
+        </p>
         <ProductList
           products={products}
           handlePagination={this.handlePagination}
           pages={pages}
+          isFetching={isFetching}
           handleSingleProduct={this.handleSingleProduct}
+          handleProductCategories={this.handleProductCategories}
+          catInDept={catInDept}
+          id={this.state.id}
         />
       </div>
     );
@@ -78,12 +95,14 @@ export class Products extends Component {
 }
 
 const mapStateToProps = ({
-  products: { products, category, pages, department }
+  products: { products, category, pages, department, isFetching, catInDept }
 }) => ({
   products,
   category,
   pages,
-  department
+  department,
+  isFetching,
+  catInDept
 });
 
 const mapDispatchToProps = dispatch => ({

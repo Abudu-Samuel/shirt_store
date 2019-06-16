@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import Loader from "../common/Loader";
+import ReactPaginate from "react-paginate";
 import { Link } from "react-router-dom";
 import { bindActionCreators } from "redux";
 import EmptySearchResult from "./EmptySearchResult";
@@ -14,6 +15,12 @@ class ProductSearch extends Component {
   componentWillUnmount() {
     this.props.actions.searchProducts("", 1);
   }
+
+  handlePagination = page => {
+    const nextPage = page.selected + 1;
+    const { actions } = this.props;
+    return actions.searchProducts(this.props.match.params.query, nextPage);
+  };
 
   handleSingleProduct = id => {
     const productId = this.props.searchProducts.rows.filter(
@@ -66,14 +73,35 @@ class ProductSearch extends Component {
             <EmptySearchResult query={this.props.match.params.query} />
           )}
         </div>
+        {Object.keys(searchProducts).length < 1 ? null : (
+          <ReactPaginate
+            previousLabel="Previous"
+            nextLabel="Next"
+            onPageChange={this.handlePagination}
+            pageCount={Math.ceil(this.props.pages / 4)}
+            containerClassName="pagination pagination-sm custom-pagination"
+            pageLinkClassName="page-link"
+            nextLinkClassName="page-link next"
+            previousLinkClassName="page-link previous"
+            disabledClassName="disabled"
+            pageClassName="page-item"
+            previousClassName="page-item"
+            nextClassName="page-item"
+            activeClassName="active"
+            subContainerClassName="pages pagination"
+          />
+        )}
       </div>
     );
   }
 }
 
-const mapStateToProps = ({ products: { searchProducts, isFetching } }) => ({
+const mapStateToProps = ({
+  products: { searchProducts, isFetching, pages }
+}) => ({
   searchProducts,
-  isFetching
+  isFetching,
+  pages
 });
 
 const mapDispatchToProps = dispatch => ({

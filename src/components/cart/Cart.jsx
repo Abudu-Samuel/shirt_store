@@ -33,6 +33,7 @@ class Cart extends Component {
   };
 
   render() {
+    console.log(this.props.cart[0]);
     return (
       <div>
         {!this.props.isFetching ? (
@@ -71,6 +72,7 @@ class Cart extends Component {
                         <tr>
                           <th scope="col">Item</th>
                           <th scope="col">Size</th>
+                          <th scope="col">Color</th>
                           <th scope="col" className="quantity">
                             Quantity
                           </th>
@@ -102,7 +104,12 @@ class Cart extends Component {
                                 </p>
                               </div>
                             </th>
-                            <td>{item.attributes.toUpperCase()}</td>
+                            <td>
+                              {item.attributes.split(",")[0].toUpperCase()}
+                            </td>
+                            <td>
+                              {item.attributes.split(",")[1].toUpperCase()}
+                            </td>
                             <td>
                               <div className="mb-3">
                                 <button

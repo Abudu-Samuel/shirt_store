@@ -74,6 +74,11 @@ export class Navbar extends Component {
                           <i className="fas fa-user mr-1" /> Profile
                         </button>
                       </Link>
+                      <Link to="/orders">
+                        <button className="dropdown-item grey-text btn btn-sm">
+                          <i className="fas fa-tshirt mr-1" /> Order
+                        </button>
+                      </Link>
                       <button
                         onClick={this.handleLogOut}
                         className="dropdown-item grey-text btn btn-sm"
