@@ -20,7 +20,10 @@ class OrderDetails extends Component {
         ) : (
           <div className="row mt-5">
             {this.props.orderData.map(order => (
-              <div key={order.product_id} className="col-md-6 mb-3">
+              <div
+                key={order.product_id}
+                className="col-10 mx-auto col-md-6 mb-3"
+              >
                 <div className="card">
                   <div className="card-body">
                     <div className="row">
