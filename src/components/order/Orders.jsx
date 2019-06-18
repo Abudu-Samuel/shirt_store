@@ -86,7 +86,7 @@ class Orders extends Component {
             ) : (
               <div className="row">
                 {this.state.paginatedNumbers.orderData.map(order => (
-                  <div key={order.order_id} className="col-md-3 mb-3">
+                  <div key={order.order_id} className="col-md-3 mb-3 ">
                     <Link to={`/orders/${order.order_id}`}>
                       <div
                         onClick={() => this.handleSingleOrder(order.order_id)}
